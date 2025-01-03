@@ -23,8 +23,7 @@ button {
 .square {
     border: 1px solid black;
     background-color: beige;
-    width: 20px;
-    height: 20px;
+    flex: 1 1 auto;
 }
 .blue {
     background-color: blue;

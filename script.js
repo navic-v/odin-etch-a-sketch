@@ -4,8 +4,12 @@ const sizeBtn = document.querySelector('button');
 // Creating 16x16 grid of square divs
 let gridDimension = 16;
 let numberOfSquareDivs = gridDimension * gridDimension;
+let sizeOfSquareDivs = 320 / gridDimension;
 for (let i = 1; i <= numberOfSquareDivs; i++ ) {
-    container.innerHTML += `<div class="square" id="div-${i}"></div>`;
+    container.innerHTML += 
+        `<div class="square" 
+              id="div-${i}"
+              style="height: ${sizeOfSquareDivs}px; width: ${sizeOfSquareDivs}px"></div>`;
 }
 
 sizeBtn.addEventListener('click', (event) => {
