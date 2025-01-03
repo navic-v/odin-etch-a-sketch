@@ -6,7 +6,7 @@ const createGrid = (number) => {
     container.innerHTML = "";
     const gridDimension = number;
     const numberOfSquareDivs = gridDimension * gridDimension;
-    const sizeOfSquareDivs = 320 / gridDimension;
+    const sizeOfSquareDivs = 960 / gridDimension;
     for (let i = 1; i <= numberOfSquareDivs; i++ ) {
         container.innerHTML += 
             `<div class="square" 
