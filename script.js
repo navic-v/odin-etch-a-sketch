@@ -13,7 +13,11 @@ const createGrid = (number) => {
                   id="div-${i}"
                   style="height: ${sizeOfSquareDivs}px; width: ${sizeOfSquareDivs}px"></div>`;
     }
-}
+};
+
+const randomColor = () => {
+    return Math.round(Math.random() * 255);
+};
 
 sizeBtn.addEventListener('click', (event) => {
     event.preventDefault();
@@ -30,7 +34,10 @@ sizeBtn.addEventListener('click', (event) => {
 container.addEventListener('mouseover', (event) => {
     const divId = `#${event.target.id}`;
     const target = document.querySelector(divId);
-    target.classList.add('blue');
+    const randomRedColor = randomColor();
+    const randomGreenColor = randomColor();
+    const randomBlueColor = randomColor();
+    target.style.backgroundColor = `rgb(${randomRedColor}, ${randomGreenColor}, ${randomBlueColor})`;
 });
 
 // Creating 16x16 grid of square divs
