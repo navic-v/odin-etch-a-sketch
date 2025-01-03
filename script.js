@@ -12,6 +12,6 @@ for (let i = 1; i <= numberOfSquareDivs; i++ ) {
 container.addEventListener('mouseover', (event) => {
     const divId = `#${event.target.id}`;
     const target = document.querySelector(divId);
-    
-})
+    target.classList.add('blue');
+});
 
