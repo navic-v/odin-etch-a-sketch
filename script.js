@@ -6,7 +6,7 @@ const createGrid = (number) => {
     container.innerHTML = "";
     const gridDimension = number;
     const numberOfSquareDivs = gridDimension * gridDimension;
-    const sizeOfSquareDivs = 960 / gridDimension;
+    const sizeOfSquareDivs = 640 / gridDimension;
     for (let i = 1; i <= numberOfSquareDivs; i++ ) {
         container.innerHTML += 
             `<div class="square" 
@@ -17,11 +17,11 @@ const createGrid = (number) => {
 
 sizeBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    let newDimension = Number(prompt('How many square per size do you want? (1 - 100)'));
+    let newDimension = Number(prompt('How many square per size do you want? (1 - 64)'));
     if (Number.isInteger(newDimension) && newDimension <= 100) {
         createGrid(newDimension);
     } else {
-        alert('Enter the number from 1 to 100');
+        alert('Enter the number from 1 to 64');
     }
 })
 
