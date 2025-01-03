@@ -10,8 +10,12 @@ for (let i = 1; i <= numberOfSquareDivs; i++ ) {
 
 sizeBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    let newDimension = prompt('How many square per size do you want?');
-    console.log(newDimension);
+    let newDimension = Number(prompt('How many square per size do you want? (1 - 100)'));
+    if (Number.isInteger(newDimension) && newDimension <= 100) {
+        alert(newDimension);
+    } else {
+        alert('Enter the number from 1 to 100');
+    }
 })
 
 // Set up a "hover" effect so that the grid divs change color when your mouse passes over them,
