@@ -1,22 +1,25 @@
 const container = document.querySelector('.container');
 const sizeBtn = document.querySelector('button');
 
-// Creating 16x16 grid of square divs
-let gridDimension = 16;
-let numberOfSquareDivs = gridDimension * gridDimension;
-let sizeOfSquareDivs = 320 / gridDimension;
-for (let i = 1; i <= numberOfSquareDivs; i++ ) {
-    container.innerHTML += 
-        `<div class="square" 
-              id="div-${i}"
-              style="height: ${sizeOfSquareDivs}px; width: ${sizeOfSquareDivs}px"></div>`;
+
+const createGrid = (number) => {
+    container.innerHTML = "";
+    const gridDimension = number;
+    const numberOfSquareDivs = gridDimension * gridDimension;
+    const sizeOfSquareDivs = 320 / gridDimension;
+    for (let i = 1; i <= numberOfSquareDivs; i++ ) {
+        container.innerHTML += 
+            `<div class="square" 
+                  id="div-${i}"
+                  style="height: ${sizeOfSquareDivs}px; width: ${sizeOfSquareDivs}px"></div>`;
+    }
 }
 
 sizeBtn.addEventListener('click', (event) => {
     event.preventDefault();
     let newDimension = Number(prompt('How many square per size do you want? (1 - 100)'));
     if (Number.isInteger(newDimension) && newDimension <= 100) {
-        alert(newDimension);
+        createGrid(newDimension);
     } else {
         alert('Enter the number from 1 to 100');
     }
@@ -29,4 +32,7 @@ container.addEventListener('mouseover', (event) => {
     const target = document.querySelector(divId);
     target.classList.add('blue');
 });
+
+// Creating 16x16 grid of square divs
+createGrid(16);
 
