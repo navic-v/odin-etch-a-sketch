@@ -10,4 +10,6 @@
 .square {
     border: 1px solid black;
     background-color: beige;
+    width: 5px;
+    height: 5px;
 }
